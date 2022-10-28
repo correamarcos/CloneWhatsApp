@@ -25,7 +25,7 @@ body{
     max-width: 415px;
     display: flex;
     flex-direction: column;    
-    border-right: 1px solid #9191917e;
+    border-right: 1px solid #91919147;
     background-color: #111b21;
 }
 
@@ -64,14 +64,13 @@ header{
 }
 
 .search{
-    background-color: #f6f6f6;
-    border-bottom: 1px solid #EEE;
-    /* border-radius: 10px; */
+    background-color: #111b21;
+    border-bottom: 1px solid #9191910f;
     padding: 5px 8px;
 }
 
 .search-input{
-    background-color: #FFF;
+    background-color: #202c33;
     height: 35px;
     border-radius: 20px;
     display: flex;
@@ -99,6 +98,32 @@ header{
     cursor: pointer;
 }
 
+.card-contact{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.group-contact{
+    padding: 14px 0px;
+    margin-left: 15px;
+    width: 100%;
+    margin-right: 5px;
+    border-bottom: 1px solid #91919147;
+}
+
+.contact-name{
+    font-weight: 500;
+    color: #EEE;
+}
+
+.last-message{
+    font-size: 14px;
+    color: #919191;
+    padding-top: 5px;
+}
+
 /* CHAT */
 .chats{
     width: 100%;
@@ -124,30 +149,4 @@ header{
 .user span{
     padding-left: 15px;
     color: #EEE;
-}
-
-.card-contact{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-left: 10px;
-}
-
-.group-contact{
-    padding: 14px 0px;
-    margin-left: 15px;
-    width: 100%;
-    margin-right: 5px;
-    border-bottom: 1px solid #9191917e;
-}
-
-.contact-name{
-    font-weight: 500;
-    color: #EEE;
-}
-
-.last-message{
-    font-size: 14px;
-    color: #919191;
-    padding-top: 5px;
 }
