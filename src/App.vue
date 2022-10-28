@@ -28,8 +28,13 @@
           </div>
           
           <div class="contactslist">
-            <p v-for="conversa in conversas" :key="conversa.usuario">{{conversa.usuario}}</p>
-            <p>...</p>
+            <div v-for="conversa in conversas" :key="conversa.usuario" class="card-contact" >
+              <img class="contact-picture" v-bind:src="conversa.picture" alt="profile">
+              <div class="group-contact">
+                <div class="contact-name">{{conversa.usuario}}</div>
+                <div class="last-message">{{conversa.mensagens.at(-1)}}</div>
+              </div>              
+            </div>            
           </div>
           
         </div>

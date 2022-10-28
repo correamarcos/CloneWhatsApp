@@ -25,7 +25,8 @@ body{
     max-width: 415px;
     display: flex;
     flex-direction: column;    
-    border-right: 1px solid #ddd;
+    border-right: 1px solid #9191917e;
+    background-color: #111b21;
 }
 
 header{
@@ -91,6 +92,13 @@ header{
     width: 12px;
 }
 
+.contact-picture{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
 /* CHAT */
 .chats{
     width: 100%;
@@ -118,3 +126,28 @@ header{
     color: #EEE;
 }
 
+.card-contact{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.group-contact{
+    padding: 14px 0px;
+    margin-left: 15px;
+    width: 100%;
+    margin-right: 5px;
+    border-bottom: 1px solid #9191917e;
+}
+
+.contact-name{
+    font-weight: 500;
+    color: #EEE;
+}
+
+.last-message{
+    font-size: 14px;
+    color: #919191;
+    padding-top: 5px;
+}
