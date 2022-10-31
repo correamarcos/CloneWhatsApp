@@ -124,6 +124,18 @@ header{
     padding-top: 5px;
 }
 
+.name-date{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.date{
+    color: #919191;
+    font-size: 12px;
+    padding-right: 15px;
+}
+
 /* CHAT */
 .chats{
     width: 100%;
@@ -149,4 +161,32 @@ header{
 .user span{
     padding-left: 15px;
     color: #EEE;
+}
+
+.balloon{
+    background: #202c33;
+    color: white;
+    font-size: 14px;
+    box-shadow: rgba(0,0,0, 0.13) 0px 1px 0.5px 0px;
+    margin: 5px 90px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: fit-content;
+}
+.balloon span{
+    margin-left: 25px;
+    color: rgb(170, 170, 170);
+    font-size: 11px;
+}
+
+.verde{
+    background-color: #005c4b;
+    align-self: flex-end;
+}
+
+.list-messages{
+    height: 85%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
 }

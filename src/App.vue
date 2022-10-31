@@ -28,11 +28,15 @@
           </div>
           
           <div class="contactslist">
-            <div v-for="conversa in conversas" :key="conversa.usuario" class="card-contact" >
+            <div v-for="(conversa,index) in conversas" :key="conversa.index" @click="indiceAtivo = index" class="card-contact" >
               <img class="contact-picture" v-bind:src="conversa.picture" alt="profile">
               <div class="group-contact">
-                <div class="contact-name">{{conversa.usuario}}</div>
-                <div class="last-message">{{conversa.mensagens.at(-1)}}</div>
+                <div class="name-date">
+                  <div class="contact-name">{{conversa.usuario}}</div>
+                  <div class="date">{{conversa.mensagens.at(-1).horario}}</div>
+                </div>
+                
+                <div class="last-message">{{conversa.mensagens.at(-1).Conteudo}}</div>
               </div>              
             </div>            
           </div>
@@ -41,8 +45,8 @@
         <div class="chats">
           <div class="description">
               <div class="user">
-                <img class="header-avatar" src="https://365psd.com/images/istock/previews/1009/100996291-male-avatar-profile-picture-vector.jpg" alt="profile">
-                <span>Nome Contato</span>
+                <img class="header-avatar" v-bind:src="conversas[indiceAtivo].picture" alt="profile">
+                <span>{{conversas[indiceAtivo].usuario}}</span>
               </div>              
               <div class="header-buttons">      
                 <div class="header-btn">
@@ -51,10 +55,17 @@
                 <div class="header-btn">
                   <span class="material-icons header-icon">more_vert</span>                
                 </div>              
-              </div>
-                     
+              </div>              
           </div>
-          <p>...</p>
+          <div class="list-messages">
+             <Mensagem
+              v-for="(mensagem, index) in conversas[indiceAtivo].mensagens"
+              :key="index"
+              :conteudo="mensagem.Conteudo"
+              :horario="mensagem.horario"
+              :verde="mensagem.verde"
+             />
+          </div>
         </div>
       </div>
     </div>
@@ -67,13 +78,18 @@
 
 <script>
 
-import conversasIniciais from '../public/js/scripts'
+import conversasIniciais from '../public/js/dados'
+import Mensagem from '../public/component_message.vue'
   
 export default{
   data: function(){
     return{
-      conversas: conversasIniciais
+      conversas: conversasIniciais,
+      indiceAtivo: 0
     }      
+  },
+  components:{
+    Mensagem
   }
 }
 </script>
