@@ -66,14 +66,17 @@
               :verde="mensagem.verde"
              />
           </div>
+          <div class="input_chat">
+            <div class="input-bar-icon"><span class="material-icons">insert_emoticon</span></div>
+            <div class="input-bar-icon"><span class="material-icons">attach_file</span></div>
+            <input v-model="conteudoNovaMensagem" v-on:keyup.enter="enviarMensagem" type="text" class="input" placeholder="Insira sua mensagem">
+             <div class="input-bar-icon"><span class="material-icons">mic</span></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <h1>Welcome to Your Vue.js App</h1>
-  </div> -->
+ 
 </template>
 
 <script>
@@ -85,11 +88,27 @@ export default{
   data: function(){
     return{
       conversas: conversasIniciais,
-      indiceAtivo: 0
+      indiceAtivo: 0,
+      conteudoNovaMensagem: ''
     }      
   },
   components:{
     Mensagem
+  },
+  methods:{
+    enviarMensagem: function(){
+      let horaAtual = new Date().getHours() + ":" + new Date().getMinutes();
+
+      let novaMensagem = {
+        horario: horaAtual,
+        Conteudo: this.conteudoNovaMensagem,
+        verde: true
+      };
+
+      this.conversas[this.indiceAtivo].mensagens.push(novaMensagem);
+
+      this.conteudoNovaMensagem = '';
+    }
   }
 }
 </script>
